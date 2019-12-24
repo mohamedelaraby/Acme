@@ -1,21 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width= , initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Acme</title>
-</head>
-<body>
-    
-</body>
-</html><!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Acme</title>
+        <title>Acme - @yield('title')</title>
 
          <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -26,7 +15,30 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
-    @yield('content')
+
+    @include('inc.navbar')
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-md-8 col-lg-8">
+                @yield('content')
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                @include('inc.sidebar')
+            </div>
+        </div>
+      
+    </div>
+ 
+   
+  
+
+
+
+
+
+
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
