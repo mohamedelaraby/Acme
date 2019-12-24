@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+#footer {
+  margin-top: 3rem;
+  padding: 2rem;
+  color: #fff;
+  background: #333;
+}
+
 /*!
  * Bootstrap v3.4.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 Twitter, Inc.

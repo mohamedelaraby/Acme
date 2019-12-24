@@ -6,36 +6,49 @@
 
         <title>Acme - @yield('title')</title>
 
-         <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+            <!-- Fonts -->
+        <link rel="dns-prefetch" href="//fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    </head>
+        <!-- Styles -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        </head>
     <body>
 
-    @include('inc.navbar')
+        {{-- include the navbar --}}
+        @include('inc.navbar')
+    
+        {{-- Home page content --}}
+        <div class="container">
+            {{-- if this is the home page include the showcase --}}  
+            @if(Request::is('/'))
+                @include('inc.showcase')
+            @endif
+        
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-8 col-md-8 col-lg-8">
-                @yield('content')
+            <div class="row">
+                <div class="col-sm-8 col-md-8 col-lg-8">
+                    @yield('content')
+                </div>
+                <div class="col-sm-4 col-md-4 col-lg-4">
+                    @include('inc.sidebar')
+                </div>
             </div>
-            <div class="col-sm-4 col-md-4 col-lg-4">
-                @include('inc.sidebar')
-            </div>
+        
+        
+    
+    
+    
+
+        {{-- /.Container --}}
         </div>
-      
-    </div>
- 
-   
-  
-
-
-
-
+        
+        {{-- Footer --}}
+            <footer class="footer text-center" id="footer">
+            <p class="lead">Copyrights 2019 &COPY; Acme</p>
+            {{-- for dynamic time we need javascript --}}
+            </footer>
 
 
 
